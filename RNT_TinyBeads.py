@@ -162,7 +162,7 @@ Bead_info = {"bead1": ("C10 N2 C23"),
 ############################### 
 
 # path to your file 
-path = '/Users/vkarra/Desktop/University/NEU/Research/projects/rosette_nanotubes/Codes/10ring_rnt.gro'
+path = ''
 
 # clean up data 
 digit_search = re.compile('\d+')
