@@ -52,7 +52,7 @@ def get_box(path):
 
     return timestep, box_size
 
-def get_inner_pairs(n_rings): 
+def get_inner_pairs(n_rings, ring_beads): 
     """
     Get the pairs for the inner radius function. 
     """
@@ -63,12 +63,12 @@ def get_inner_pairs(n_rings):
     
     for i in range(len(first_bead)): 
         for j in range(n_rings): 
-            inner_first_bead.append(first_bead[i]+(j*30))
-            inner_second_bead.append(second_bead[i]+(j*30))
+            inner_first_bead.append(first_bead[i]+(j*ring_beads))
+            inner_second_bead.append(second_bead[i]+(j*ring_beads))
             
     return inner_first_bead, inner_second_bead
 
-def get_outer_pairs(n_rings): 
+def get_outer_pairs(n_rings, ring_beads): 
     """
     Get the pairs for the outer radius function. 
     """
@@ -79,8 +79,8 @@ def get_outer_pairs(n_rings):
     
     for i in range(len(first_bead)): 
         for j in range(n_rings): 
-            outer_first_bead.append(first_bead[i]+(j*30))
-            outer_second_bead.append(second_bead[i]+(j*30))
+            outer_first_bead.append(first_bead[i]+(j*ring_beads))
+            outer_second_bead.append(second_bead[i]+(j*ring_beads))
             
     return outer_first_bead, outer_second_bead
 
@@ -171,8 +171,8 @@ for i in range(len(box_size)):
     z_box.append(box_size[i][2])
 
 # get the pairs 
-inner_first_bead, inner_second_bead = get_inner_pairs(n_rings)
-outer_first_bead, outer_second_bead = get_outer_pairs(n_rings)
+inner_first_bead, inner_second_bead = get_inner_pairs(n_rings,ring_beads)
+outer_first_bead, outer_second_bead = get_outer_pairs(n_rings,ring_beads)
 
 # get radii 
 bead_size = 0.34
